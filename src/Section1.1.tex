@@ -1,0 +1,74 @@
+\documentclass[12pt]{article}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{pgfplots}
+\pgfplotsset{compat = newest}
+\title{MATH-UA 121 Section 1.1}
+\author{Ishan Pranav}
+\date{September 30, 2022}
+\renewcommand{\theenumi}{\alph{enumi}}
+\begin{document}
+\maketitle
+\section{Find}
+Find the domain and range of the following functions.
+\begin{enumerate}
+\item
+\[f(x)=\sqrt{4-x^4}.\]
+
+\[f:\left[-\sqrt{2},\sqrt{2}\right]\to[0,2],\quad f(x)=\sqrt{4-x^4}.\]
+\item
+\[f(x)=\ln(x^2-1)+5.\]
+
+\[f:(-\infty,-1)\cup(1,\infty)\to\mathbb{R},\quad f(x)=\ln(x^2-1)+5.\]
+\item
+\[f(x)=\frac{x^2-1}{x+1}.\]
+
+\[f:(-\infty,-1)\cup(-1,\infty)\to(-\infty,-2)\cup(-2,\infty).\]
+\end{enumerate}
+\section{Determine}
+\begin{enumerate}
+\item
+\[f(x)=\frac{x}{x^2+1}.\]
+\begin{align}
+    f(-x)
+    &=\frac{-x}{(-x)^2+1},\\
+    &=-\frac{x}{x^2+1}\\
+    &=-f(x).
+\end{align}
+
+$f$ is an odd function.
+\item
+\[f(x)=\cos{x}+x^2+1.\]
+\begin{align}
+    f(-x)
+    &=\cos(-x)+(-x)^2+1\\
+    &=\cos{x}+x^2+1\\
+    &=f(x).
+\end{align}
+
+$f$ is an even function.
+\end{enumerate}
+\section{A cell phone plan}
+\begin{enumerate}
+\item The monthly cost $C$ is a function of the number $x$ of minutes used.
+\begin{equation}
+C(x)=\begin{cases}
+    35,&0\leq x\leq 400\\
+    (0.1)(x-400)+35,&x>400.
+\end{cases}
+\end{equation}
+\item The graph of $f$.
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    xmin = 0, xmax = 600,
+    ymin = 0, ymax = 55]
+    \addplot[domain = 0:400]{35};
+    \addplot[domain = 400:600]{0.1*(x-400)+35};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{enumerate}
+\end{document}
