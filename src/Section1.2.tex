@@ -1,0 +1,169 @@
+\documentclass[12pt]{article}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{pgfplots}
+\pgfplotsset{compat = newest}
+\title{MATH-UA 121 Section 1.2}
+\author{Ishan Pranav}
+\date{September 30, 2022}
+\renewcommand{\theenumi}{\alph{enumi}}
+\begin{document}
+\maketitle
+\section{Let $f$ and $g$ be linear functions with equations}
+
+\[f(x)=m_1x+b_1\text{ and }g(x)=m_2x+b_2.\]
+
+\begin{align*}
+    (f\circ g)(x)
+    &=f(g(x)),\\
+    &=f(m_2x+b_2),\\
+    &=m_1(m_2x+b_2)+b_1,\\
+    &=m_1m_2x+m_1b_2+b_1,\\
+    &=(m_1m_2)x+(m_1b_2+b_1).
+\end{align*}
+
+$f\circ g$ is a linear function with slope $m_1m_2$.
+\section{Let $f(x)$ be a function}
+The graph of $f$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    xmin = 0, xmax = 4,
+    ymin = 0, ymax = 4]
+    \addplot[domain = 0:2]{2*x};
+    \addplot[domain = 2:3]{-2*x+8};
+    \addplot[domain = 3:4]{2*x-4};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\begin{enumerate}
+\item
+The graph of $f(2x)$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    xmin = 0, xmax = 4,
+    ymin = 0, ymax = 4]
+    \addplot[domain = 0:1]{4*x};
+    \addplot[domain = 1:1.5]{-4*x+8};
+    \addplot[domain = 1.5:2]{4*x-4};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+The graph of $f(2x+3)$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    xmin = -3, xmax = 1,
+    ymin = 0, ymax = 4]
+    \addplot[domain = -3:-2]{4*(x+3)};
+    \addplot[domain = -2:-1.5]{-4*(x+3)+8};
+    \addplot[domain = -1.5:1]{4*(x+3)-4};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+The graph of $-f(2x+3)$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    xmin = -3, xmax = 1,
+    ymin = -4, ymax = 0]
+    \addplot[domain = -3:-2]{-4*(x+3)};
+    \addplot[domain = -2:-1.5]{4*(x+3)-8};
+    \addplot[domain = -1.5:1]{-4*(x+3)+4};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+The graph of $-f(2x+3)+4$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    xmin = -3, xmax = 1,
+    ymin = 0, ymax = 4]
+    \addplot[domain = -3:-2]{-4*(x+3)+4};
+    \addplot[domain = -2:-1.5]{4*(x+3)-4};
+    \addplot[domain = -1.5:1]{-4*(x+3)+8};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\item The graph of $f(x)$ such that it is an odd function.
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    xmin = -4, xmax = 4,
+    ymin = -4, ymax = 4]
+    \addplot[domain = -4:-3]{2*x+4};
+    \addplot[domain = -3:-2]{-2*x-8};
+    \addplot[domain = -2:2]{2*x};
+    \addplot[domain = 2:3]{-2*x+8};
+    \addplot[domain = 3:4]{2*x-4};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{enumerate}
+\section{The Heaviside function}
+\[H(t)=\begin{cases}
+    0,&t<0\\
+    1,&t\geq 0.
+\end{cases}\]
+\begin{enumerate}
+\item\[y=tH(t)=\begin{cases}
+    0,&t<0\\
+    t,&t\geq 0.
+\end{cases}\]
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    xmin = -4, xmax = 4,
+    ymin = -1, ymax = 4]
+    \addplot[domain = -4:0]{0};
+    \addplot[domain = 0:4]{x};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\item
+\begin{align*}V(t)
+&=\begin{cases}
+    0,&t<0\\
+    2t,&t\geq 0.
+\end{cases}\\
+&=2tH(t).
+\end{align*}
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    xmin = -60, xmax = 60,
+    ymin = -1, ymax = 120]
+    \addplot[domain = -60:0]{0};
+    \addplot[domain = 0:60]{2*x};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\item
+\begin{align*}V(t)
+&=\begin{cases}
+    0,&t<7\\
+    4(t-7),&t\geq 7.
+\end{cases}\\
+&=(4)(t-7)(H(t-7)).
+\end{align*}
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    xmin = -1, xmax = 32,
+    ymin = -1, ymax = 100]
+    \addplot[domain = -1:7]{0};
+    \addplot[domain = 7:32]{4*(x-7)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{enumerate}
+\end{document}
