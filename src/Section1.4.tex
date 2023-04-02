@@ -1,0 +1,54 @@
+\documentclass[12pt]{article}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pgfplots}
+\pgfplotsset{compat = newest}
+\title{MATH-UA 121 Section 1.4}
+\author{Ishan Pranav}
+\date{September 30, 2022}
+\renewcommand{\theenumi}{\alph{enumi}}
+\begin{document}
+\maketitle
+\section{First squeeze theorem}
+\[\lim_{t\to 0}{(2^t-1)\left(\cos{\frac{1}{t}}\right)}.\]
+
+\[-1\leq\cos{\frac{1}{t}}\leq 1.\]
+
+\[-(2^t-1)\leq(2^t-1)\left(\cos{\frac{1}{t}}\right)\leq 2^t-1,\,\text{ for }t>0.\]
+
+\[\lim_{t\to 0^+}{-(2^t-1)}\leq\lim_{t\to 0^+}{(2^t-1)\left(\cos{\frac{1}{t}}\right)}\leq\lim_{t\to 0^+}{\left[2^t-1\right]},\,\text{ for }t>0.\]
+
+\[\lim_{t\to 0^-}{-(2^t-1)}\geq\lim_{t\to 0^-}{(2^t-1)\left(\cos{\frac{1}{t}}\right)}\geq\lim_{t\to 0^-}{\left[2^t-1\right]},\,\text{ for }t>0.\]
+\\\,
+
+\begin{tabular}{ccc}
+$0\leq\lim_{t\to 0^+}{(2^t-1)\left(\cos{\frac{1}{t}}\right)}\leq 0$&\,&
+$0\geq\lim_{t\to 0^-}{(2^t-1)\left(\cos{\frac{1}{t}}\right)}\geq 0$
+\\\\
+$\lim_{t\to 0^+}{(2^t-1)\left(\cos{\frac{1}{t}}\right)}=0$&\,&$\lim_{t\to 0^-}{(2^t-1)\left(\cos{\frac{1}{t}}\right)}=0$\\
+\end{tabular}\\
+
+\[\lim_{t\to 0}{(2^t-1)\left(\cos{\frac{1}{t}}\right)}=0.\]
+\section{Second squeeze theorem}
+\[\lim_{x\to 3}{(x^2-9)\frac{x-3}{|x-3|}}.\]
+
+\[-1\leq\frac{x-3}{|x-3|}\leq 1.\]
+
+\[-(x^2-9)\leq(x^2-9)\frac{x-3}{|x-3|}\leq x^2-9,\,\text{ for }x>3.\]
+
+\[\lim_{x\to 3^+}{-(x^2-9)}\leq\lim_{x\to 3^+}{(x^2-9)\frac{x-3}{|x-3|}}\leq\lim_{x\to 3^+}{\left[x^2-9\right]},\,\text{ for }x>3.\]
+
+\[\lim_{x\to 3^-}{-(x^2-9)}\geq\lim_{x\to 3^-}{(x^2-9)\frac{x-3}{|x-3|}}\geq\lim_{x\to 3^-}{\left[x^2-9\right]},\,\text{ for }x>3.\]\\\,
+
+\begin{tabular}{ccc}
+$0\leq\lim_{x\to 3^+}{(x^2-9)\frac{x-3}{|x-3|}}\leq 0$&\,&
+$0\geq\lim_{x\to 3^-}{(x^2-9)\frac{x-3}{|x-3|}}\geq 0$
+\\\\
+$\lim_{x\to 3^+}{(x^2-9)\frac{x-3}{|x-3|}}=0$&\,&$\lim_{x\to 3^-}{(x^2-9)\frac{x-3}{|x-3|}}=0$\\
+\end{tabular}\\
+
+\[\lim_{x\to 3}{(x^2-9)\frac{x-3}{|x-3|}}=0.\]
+\end{document}
